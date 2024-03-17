@@ -32,7 +32,7 @@ final class WidhMakerViewController: UIViewController {
         static let aplhaInitValue: Float = 1
         
         static let stackRadius: CGFloat = 20
-        static let stackBottom: CGFloat = -40
+        static let stackBottom: CGFloat = -20
         static let stackLeading: CGFloat = 20
         
         static let hideButtonType: UIButton.ButtonType = .system
@@ -46,12 +46,17 @@ final class WidhMakerViewController: UIViewController {
         static let hideButtonCornerRadius: CGFloat = 20
         static let hideButtonFont: UIFont! = .systemFont(ofSize: 24, weight: .bold)
         static let hideButtoncontentEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
+        
+        static let wishesButtonTitle: String = "My Wishes"
+        static let wishesButtonBottom: CGFloat = -30
+        static let wishesButtonFont: UIFont! = .systemFont(ofSize: 20, weight: .bold)
     }
     
     private var titleLabel: UILabel = UILabel()
     private var descriptionLabel: UILabel = UILabel()
     private var hideButton: UIButton = UIButton(type: Constants.hideButtonType)
-    private var stack = UIStackView()
+    private var stack: UIStackView = UIStackView()
+    private var addWishButton: UIButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +67,7 @@ final class WidhMakerViewController: UIViewController {
         configureTitle()
         configureDescription()
         configureHideButton()
+        configureAddWishButton()
         configureSliders()
     }
     
@@ -122,6 +128,30 @@ final class WidhMakerViewController: UIViewController {
         hideButton.setTitle(getHideButtonTitle(), for:Constants.hideButtonControlState)
     }
     
+    private func configureAddWishButton() {
+        view.addSubview(addWishButton)
+        
+        addWishButton.translatesAutoresizingMaskIntoConstraints = false
+        addWishButton.titleLabel?.font = Constants.wishesButtonFont
+        addWishButton.setTitle(Constants.wishesButtonTitle, for: Constants.hideButtonControlState)
+        addWishButton.backgroundColor = Constants.hideButtonBackgroundColor
+        addWishButton.layer.cornerRadius = Constants.hideButtonCornerRadius
+        addWishButton.tintColor = Constants.hideButtonColor
+        addWishButton.addTarget(self, action: #selector(addWishButtonPressed), for: .touchUpInside)
+        addWishButton.contentEdgeInsets = Constants.hideButtoncontentEdgeInsets
+        
+        
+        NSLayoutConstraint.activate([
+            addWishButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            addWishButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: Constants.wishesButtonBottom),
+        ])
+    }
+    
+    @objc
+    private func addWishButtonPressed() {
+        present(WishStoringViewController(), animated: true)
+    }
+    
     private func configureSliders() {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
@@ -147,7 +177,7 @@ final class WidhMakerViewController: UIViewController {
         NSLayoutConstraint.activate([
             stack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.stackLeading),
-            stack.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: Constants.stackBottom),
+            stack.bottomAnchor.constraint(equalTo: addWishButton.topAnchor, constant: Constants.stackBottom),
         ])
     }
 }

@@ -13,6 +13,10 @@
 		CA34AAB22BA625B100DF7188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA34AAB02BA625B100DF7188 /* LaunchScreen.storyboard */; };
 		CA34AABA2BA6278200DF7188 /* WishMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34AAB92BA6278200DF7188 /* WishMakerViewController.swift */; };
 		CA34AABD2BA630FD00DF7188 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA34AABC2BA630FD00DF7188 /* CustomSlider.swift */; };
+		CA9E422E2BA662F600101C69 /* WishStoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E422D2BA662F600101C69 /* WishStoringViewController.swift */; };
+		CA9E42302BA66C7C00101C69 /* WrittenWishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E422F2BA66C7C00101C69 /* WrittenWishCell.swift */; };
+		CA9E42332BA66F5400101C69 /* UIViewPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E42322BA66F5400101C69 /* UIViewPin.swift */; };
+		CA9E42352BA67E8000101C69 /* AddWishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E42342BA67E8000101C69 /* AddWishCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		CA34AAB32BA625B100DF7188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA34AAB92BA6278200DF7188 /* WishMakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishMakerViewController.swift; sourceTree = "<group>"; };
 		CA34AABC2BA630FD00DF7188 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		CA9E422D2BA662F600101C69 /* WishStoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishStoringViewController.swift; sourceTree = "<group>"; };
+		CA9E422F2BA66C7C00101C69 /* WrittenWishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrittenWishCell.swift; sourceTree = "<group>"; };
+		CA9E42322BA66F5400101C69 /* UIViewPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPin.swift; sourceTree = "<group>"; };
+		CA9E42342BA67E8000101C69 /* AddWishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWishCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		CA34AAA42BA625AF00DF7188 /* aszabelinPW2 */ = {
 			isa = PBXGroup;
 			children = (
+				CA9E42312BA66F3900101C69 /* Utils */,
 				CA34AABB2BA630DF00DF7188 /* Views */,
 				CA34AAA52BA625AF00DF7188 /* AppDelegate.swift */,
 				CA34AAA72BA625AF00DF7188 /* SceneDelegate.swift */,
@@ -63,6 +72,7 @@
 				CA34AAB02BA625B100DF7188 /* LaunchScreen.storyboard */,
 				CA34AAB32BA625B100DF7188 /* Info.plist */,
 				CA34AAB92BA6278200DF7188 /* WishMakerViewController.swift */,
+				CA9E422D2BA662F600101C69 /* WishStoringViewController.swift */,
 			);
 			path = aszabelinPW2;
 			sourceTree = "<group>";
@@ -71,8 +81,18 @@
 			isa = PBXGroup;
 			children = (
 				CA34AABC2BA630FD00DF7188 /* CustomSlider.swift */,
+				CA9E422F2BA66C7C00101C69 /* WrittenWishCell.swift */,
+				CA9E42342BA67E8000101C69 /* AddWishCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CA9E42312BA66F3900101C69 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CA9E42322BA66F5400101C69 /* UIViewPin.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,10 +165,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA9E42352BA67E8000101C69 /* AddWishCell.swift in Sources */,
 				CA34AAA62BA625AF00DF7188 /* AppDelegate.swift in Sources */,
 				CA34AABA2BA6278200DF7188 /* WishMakerViewController.swift in Sources */,
 				CA34AAA82BA625AF00DF7188 /* SceneDelegate.swift in Sources */,
 				CA34AABD2BA630FD00DF7188 /* CustomSlider.swift in Sources */,
+				CA9E42332BA66F5400101C69 /* UIViewPin.swift in Sources */,
+				CA9E42302BA66C7C00101C69 /* WrittenWishCell.swift in Sources */,
+				CA9E422E2BA662F600101C69 /* WishStoringViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
